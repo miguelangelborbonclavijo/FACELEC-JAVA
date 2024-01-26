@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+                <style type="text/css">
+            *{
+                padding: 0px;
+                margin: 0px;
+            }
+            #header {
+                margin: auto;
+                width: 1000px;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            ul, ol{
+                list-style: none;
+            }
+            .nav li a{
+                background-color: #212529;
+                color: white;
+                text-decoration: none;
+                padding: 10px 37px;
+                display: block;
+            }
+            .nav li a:hover{
+                background-color: #434343;
+            }
+            .nav > li{
+                float: left;
+            }
+            .nav li ul{
+                display: none;
+                position: absolute;
+                min-width: 140px;
+            }
+            .nav li:hover > ul{
+                display: block;
+            }
+            .nav li ul li{
+                position: relative;
+            }
+            .nav li ul li ul{
+                right: -138px;
+                top: 0px;
+            }
+        </style>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/> 
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"></link>
+        <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css"></link>
+        <title>Inicio</title>    
+    </h:head>
+    <h:body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <div id="header">
+                    <ul class="nav">
+                        <li><a href="principal.xhtml">FacElec</a></li>
+                        <li><a href="principal.xhtml">Inicio</a></li>
+                        <li><a href="">Clientes</a>
+                            <ul>
+                                <li><a href="">Personas</a>
+                                    <ul>
+                                        <li><a href="agregarPersonas.xhtml">Registrar</a></li>
+                                        <li><a href="inicio.xhtml">Consultar </a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Clientes</a>
+                                    <ul>
+                                        <li><a href="agregarClientes.xhtml">Registrar</a></li>
+                                        <li><a href="clientes.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Cuenta</a>
+                                    <ul>
+                                        <li><a href="agregarUsuarios.xhtml">Registrar</a></li>
+                                        <li><a href="usuarios.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="">Trabajadores</a>
+                            <ul>
+                                <li><a href="">Personas</a>
+                                    <ul>
+                                        <li><a href="agregarPersonas.xhtml">Registrar</a></li>
+                                        <li><a href="inicio.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Trabajador</a>
+                                    <ul>
+                                        <li><a href="agregarTrabajador.xhtml">Registrar</a></li>
+                                        <li><a href="trabajador.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Cuenta</a>
+                                    <ul>
+                                        <li><a href="agregarUsuarios.xhtml">Registrar</a></li>
+                                        <li><a href="usuarios.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>   
+                        <li><a href="">Inventario</a>
+                            <ul>
+                                <li><a href="">Tipo de Producto</a>
+                                    <ul>
+                                        <li><a href="agregarTipoProducto.xhtml">Registrar</a></li>
+                                        <li><a href="tipoProducto.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Registrar Producto</a>
+                                    <ul>
+                                        <li><a href="agregarProducto.xhtml">Registrar</a></li>
+                                        <li><a href="producto.xhtml">Consultar</a></li>
+
+                                    </ul>
+                                </li>
+                                <li><a href="">Reporte de producto</a>
+                                    <ul>
+                                        <li><a href="agregarReporteProducto.xhtml">Registrar</a></li>
+                                        <li><a href="reporteProducto.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>   
+                        <li><a href="">Compras</a>
+                            <ul>
+                                <li><a href="">Proveedores</a>                        
+                                    <ul>
+                                        <li><a href="agregarProvedores.xhtml">Registrar</a></li>
+                                        <li><a href="provedores.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Compras</a>             
+                                    <ul>
+                                        <li><a href="agregarCompras.xhtml">Registrar</a></li>
+                                        <li><a href="compras.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="">Ventas</a>
+                            <ul>
+                                <li><a href="">Codigo de Ventas</a>                        
+                                    <ul>
+                                        <li><a href="agregarCodVen.xhtml">Registrar</a></li>
+                                        <li><a href="codven.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Venta</a> 
+                                    <ul>
+                                        <li><a href="agregarVentas.xhtml">Registrar</a></li>
+                                        <li><a href="ventas.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <h2><h:outputLabel value="#{session.getAttribute('usuario')}"/></h2>
+        <section class="bg-dark text-light p-5 text-center text-sm-start" id="home">
+            <div class="container py-5">
+                <div class="d-sm-flex align-item-center">
+                    <div>
+                        <h1>Bienvenidos a FacElec</h1>
+                        <h3 class="my-4">Quienes somos</h3>
+                        <p class="lead my-4">
+                            Somos una empresa nueva en el mercado que ofrece un serivicio
+                            de facturas electronicas ya que gran parte de los negocios
+                            lo necesitan para su funcionalidad
+                        </p>
+                        <button class="btn btn-primary btn-lg">Sobre nosotros</button>
+                    </div>
+                    <a href="">
+                        <img src="../login/img/img1.png" class="img-fluid" width="1000" alt=""/>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="p-5" id="services">
+            <div class="container py-5">
+                <div>
+                    <div class="col-md">
+                        <div style="height:100%;" class="card bg-dark text-light p-5">
+                            <h3 class="card-title mb-4">Registrar <br/>  Ventas</h3>
+                            <p style="height:50%;" class="card-text">
+                                En este apartado podras registrar todas las vantas de los productos o servicios que se hicieron en la empresa.
+                            </p>
+                            <a href="paginaVen.xhtml" class="btn btn-primary">Ingresar</a>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div style="height:100%;" class="card bg-dark text-light p-5">
+                            <h3 class="card-title mb-4">Registrar Soporte</h3>
+                            <p style="height:50%;" class="card-text">
+                                En este apartado podras registrar todas las vantas de los productos o servicios que se hicieron en la empresa.
+                            </p>
+                            <h:link outcome="soporte.xhtml" class="btn btn-primary">Ingresar</h:link>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="p-5" id="services">
+            <div class="container py-5">
+                <div>
+                    <div class="col-md">
+                        <div style="height:100%;" class="card bg-dark text-light p-5">
+                            <h3 class="card-title mb-4">Inventario</h3>
+                            <p style="height:50%;" class="card-text">
+                                En Este apartado podras registrar a todos los usuarios que interactuan con el sistema.
+                            </p>
+                            <a href="paginaProdu.xhtml" class="btn btn-primary">Ingresar</a>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div style="height:100%;" class="card bg-dark text-light p-5">
+                            <h3 class="card-title mb-4">Compras</h3>
+                            <p style="height:60%;" class="card-text">
+                                En este apartado podras consultar todas las facturas que tiene hasta el dia la empresa con la informacion introducida por la empresa
+                            </p>
+                            <a href="tipCom.xhtml" class="btn btn-primary">Ingresar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bg-dark text-light p-5" id="learn">
+            <div class="container py-5">
+                <div class="row align-items-cente justify-content-between">
+                    <div class="col-md p-5">
+                        <h2>Ventajas al utlizar nuestro servicio</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat nobis veritatis consequatur excepturi atque! Vero, deleniti. Iste voluptatum exercitationem, minus ullam odio non ex perferendis sed a rerum repudiandae corporis!</p>
+                        <a href="http://">Nuestras Ventajas</a>
+                    </div>
+                    <div class="col-md">
+                        <a href=""></a>
+                        <img src="https://www.easyap.com/wp-content/uploads/2020/07/workflow-de-facturas-recibidas.svg" class="img-fluid" alt=""/>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="text-light p-5 text-center text-sm-start" id="home">
+            <section class="p-5" id="productos">
+                <div class="container py-5">
+                    <div>
+                        <div class="col-md">
+                            <div style="height:100%;" class="card bg-dark text-light p-5">
+                                <h3 class="card-title mb-4">Registrar Clientes</h3>
+                                <p style="height:50%; " class="card-text">
+                                    En Este apartado podras registrar a todos los usuarios que interactuan con el sistema.
+                                </p>
+                                <a href="pagRegUs.xhtml" class="btn btn-primary">Ingresar</a>
+
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div style="height:100%;" class="card bg-dark text-light p-5">
+                                <h3 class="card-title mb-4">Registrar Trabajadores</h3>
+                                <p style="height:50%;" class="card-text">
+                                    En este apartado podras registrar todas las vantas de los productos o servicios que se hicieron en la empresa.
+                                </p>
+                                <h:link outcome="pagRegTra.xhtml" class="btn btn-primary" rendered="#{session.getAttribute('tipo_usuario')==('Administrador')}">Ingresar</h:link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <br/>
+        <footer id="footer" class="page-footer p-5 text-md-left card bg-dark text-light p-5">
+            <div class="container py-5">
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-uṕpercese font-weight-bold mb-4">FacElec</h5>
+                        <p>Somos una empresa nueva que su onjetivo es satisfacer las necesidades sde las empresas y sus clientes</p>
+                    </div>
+                    <div class="col-lg-5 col-md-6">
+                        <section class="p-5">
+                            <div class="container py-1 ">
+                                <div class="d-md-flex justify-content-between align-items-center">
+                                    <h3 class="text-uṕpercese font-weight-bold mb-4">Contactate con nosotros</h3>
+                                </div>
+                                <br/>
+                                <div class="input-group news input">
+                                    <input type="text" class="form-control" placeholder="Enter E-mail" name=""/>
+                                    <button class="btn btn-dark btn-lg">Enviar</button>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            .
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </h:body>
+</html>
+

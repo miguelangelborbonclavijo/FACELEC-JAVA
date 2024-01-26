@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <style type="text/css">
+            *{
+                padding: 0px;
+                margin: 0px;
+            }
+            #header {
+                margin: auto;
+                width: 1000px;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            ul, ol{
+                list-style: none;
+            }
+            .nav li a{
+                background-color: #212529;
+                color: white;
+                text-decoration: none;
+                padding: 10px 37px;
+                display: block;
+            }
+            .nav li a:hover{
+                background-color: #434343;
+            }
+            .nav > li{
+                float: left;
+            }
+            .nav li ul{
+                display: none;
+                position: absolute;
+                min-width: 140px;
+            }
+            .nav li:hover > ul{
+                display: block;
+            }
+            .nav li ul li{
+                position: relative;
+            }
+            .nav li ul li ul{
+                right: -138px;
+                top: 0px;
+            }
+        </style>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/> 
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"></link>
+        <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css"></link>
+        <title>Provedores</title>    
+    </h:head>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script> 
+
+    <script>
+        $(document).ready(function () {
+            $('#t-all').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            });
+        });</script>
+    <h:body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="../../../proyectoFinalFacturacion/vistas/index.php">FacElec</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="principal.xhtml">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="pagRegTra.xhtml">Trabajador</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="pagRegUs.xhtml">Clientes</a>
+                        </li>
+                        <!--<li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#registros">Registros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#services">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#productos">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../../../proyectoFinalFacturacion/vistas/login/tipo_usuario.php">Login</a>
+                        </li>-->
+                        <!--<li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../vistas/index.php">Analisis</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../vistas/index.php">Ajustes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#preguntas">Ayuda</a>
+                        </li>-->
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="paginaProdu.xhtml">Inventario</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="tipCom.xhtml">Compras</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="paginaVen.xhtml">Ventas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="pagRegUs.xhtml">Fidelizacion</a>
+                        </li>
+                        <!--<li>
+                            <a href="../../../proyectoFinalFacturacion/vistas/login/tipo_usuario.php" class="btn btn-primary">Iniciar sesión</a>
+                        </li>
+                        <li>
+                            <a href="../../../proyectoFinalFacturacion/vistas/login/cerrar_cli.php">Salir</a>
+                        </li>-->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <h2><h:outputLabel value="#{session.getAttribute('usuario')}"/></h2>
+        <h1>Provedores</h1>
+        <a href="agregarProvedores.xhtml"><input type="button" class="btn btn-primary" value="Registrar Provedores"/></a>
+        <a href="graficarProve.xhtml"><input type="button" class="btn btn-primary" value="Grafica"/></a>
+        <a href="tipCom.xhtml"><input type="button" class="btn btn-warning" value="Volver"/></a>
+        <table id="t-all" class="display" style="width: 50%" border="1">
+            <thead>
+                <th>Codigo Provedores</th>
+                <th>Nombre</th>
+                <th>Direccion</th>
+                <th>Celular</th>
+                <th>Acciones</th>
+            </thead>
+            <tbody>
+                <c:forEach items="#{controllerProvedores.listar()}" var="proveedores">
+                    <tr>
+                        <td>#{proveedores.prId}</td>
+                        <td>#{proveedores.prNomPr}</td>
+                        <td>#{proveedores.prDirr}</td>
+                        <td>#{proveedores.prCel}</td>
+                        <td><h:form><h:commandButton value="editar" action="#{controllerProvedores.editarProducto(proveedores)}" class="btn btn-primary" rendered="#{session.getAttribute('tipo_usuario')==('Administrador')}"/><h:commandButton action="#{controllerProvedores.eliminar(proveedores)}" class="btn btn-warning" rendered="#{session.getAttribute('tipo_usuario')==('Administrador')}" value="eliminar" onclick="return confirm('Desea eliminar este tipo de producto')"/></h:form></td>
+                    </tr>
+                </c:forEach>
+            </tbody>
+        </table>
+    </h:body>
+</html>
+

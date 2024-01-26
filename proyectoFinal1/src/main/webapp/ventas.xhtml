@@ -1,0 +1,218 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+                    <style type="text/css">
+            *{
+                padding: 0px;
+                margin: 0px;
+            }
+            #header {
+                margin: auto;
+                width: 1000px;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            ul, ol{
+                list-style: none;
+            }
+            .nav li a{
+                background-color: #212529;
+                color: white;
+                text-decoration: none;
+                padding: 10px 37px;
+                display: block;
+            }
+            .nav li a:hover{
+                background-color: #434343;
+            }
+            .nav > li{
+                float: left;
+            }
+            .nav li ul{
+                display: none;
+                position: absolute;
+                min-width: 140px;
+            }
+            .nav li:hover > ul{
+                display: block;
+            }
+            .nav li ul li{
+                position: relative;
+            }
+            .nav li ul li ul{
+                right: -138px;
+                top: 0px;
+            }
+        </style>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/> 
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"></link>
+        <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css"></link>
+        <title>Ventas</title>    
+    </h:head>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script> 
+
+    <script>
+        $(document).ready(function () {
+            $('#t-all').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            });
+        });</script>
+    <h:body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <div id="header">
+                    <ul class="nav">
+                        <li><a href="principal.xhtml">FacElec</a></li>
+                        <li><a href="principal.xhtml">Inicio</a></li>
+                        <li><a href="">Clientes</a>
+                            <ul>
+                                <li><a href="">Personas</a>
+                                    <ul>
+                                        <li><a href="agregarPersonas.xhtml">Registrar</a></li>
+                                        <li><a href="inicio.xhtml">Consultar </a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Clientes</a>
+                                    <ul>
+                                        <li><a href="agregarClientes.xhtml">Registrar</a></li>
+                                        <li><a href="clientes.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Cuenta</a>
+                                    <ul>
+                                        <li><a href="agregarUsuarios.xhtml">Registrar</a></li>
+                                        <li><a href="usuarios.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="">Trabajadores</a>
+                            <ul>
+                                <li><a href="">Personas</a>
+                                    <ul>
+                                        <li><a href="agregarPersonas.xhtml">Registrar</a></li>
+                                        <li><a href="inicio.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Trabajador</a>
+                                    <ul>
+                                        <li><a href="agregarTrabajador.xhtml">Registrar</a></li>
+                                        <li><a href="trabajador.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Cuenta</a>
+                                    <ul>
+                                        <li><a href="agregarUsuarios.xhtml">Registrar</a></li>
+                                        <li><a href="usuarios.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>   
+                        <li><a href="">Inventario</a>
+                            <ul>
+                                <li><a href="">Tipo de Producto</a>
+                                    <ul>
+                                        <li><a href="agregarTipoProducto.xhtml">Registrar</a></li>
+                                        <li><a href="tipoProducto.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Registrar Producto</a>
+                                    <ul>
+                                        <li><a href="agregarProducto.xhtml">Registrar</a></li>
+                                        <li><a href="producto.xhtml">Consultar</a></li>
+
+                                    </ul>
+                                </li>
+                                <li><a href="">Reporte de producto</a>
+                                    <ul>
+                                        <li><a href="agregarReporteProducto.xhtml">Registrar</a></li>
+                                        <li><a href="reporteProducto.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>   
+                        <li><a href="">Compras</a>
+                            <ul>
+                                <li><a href="">Proveedores</a>                        
+                                    <ul>
+                                        <li><a href="agregarProvedores.xhtml">Registrar</a></li>
+                                        <li><a href="provedores.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Compras</a>             
+                                    <ul>
+                                        <li><a href="agregarCompras.xhtml">Registrar</a></li>
+                                        <li><a href="compras.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="">Ventas</a>
+                            <ul>
+                                <li><a href="">Codigo de Ventas</a>                        
+                                    <ul>
+                                        <li><a href="agregarCodVen.xhtml">Registrar</a></li>
+                                        <li><a href="codven.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Venta</a> 
+                                    <ul>
+                                        <li><a href="agregarVentas.xhtml">Registrar</a></li>
+                                        <li><a href="ventas.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <h2><h:outputLabel value="#{session.getAttribute('usuario')}"/></h2>
+        <h1>Ventas</h1>
+        <a href="agregarVentas.xhtml"><input type="button" class="btn btn-primary" value="Registrar Codigo de Venta"/></a>
+        <h:button outcome="paginaVen.xhtml" class="btn btn-warning" value="Volver"/>
+        <table id="t-all" class="display" style="width: 50%" border="1">
+            <thead>
+                <th>ID venta</th>
+                <th>Codigo Venta</th>
+                <th>ID Trabajador</th>
+                <th>ID Cliente</th>
+                <th>Cantidad de producto</th>
+                <th>Fecha de venta</th>
+                <th>Total</th>
+                <th>Proceso</th>
+                <th>ID producto</th>
+                <th>Acciones</th>
+            </thead>
+            <tbody>
+                <c:forEach items="#{controllerVentas.listar()}" var="ventas">
+                    <tr>
+                        <td>#{ventas.venId}</td>
+                        <td>#{ventas.venCodId.codVenId}</td>
+                        <td>#{ventas.venTraId.traId}</td>
+                        <td>#{ventas.venCliId.cliPerId}</td>
+                        <td>#{ventas.venCan}</td>
+                        <td>#{ventas.venFech}</td>
+                        <td>#{ventas.venTot}</td>
+                        <td>#{ventas.venAcId.veAnTip}</td>
+                        <td>#{ventas.venProId.proDes}</td>
+                        <td><h:form><h:commandButton value="editar" action="#{controllerVentas.editarVentas(ventas)}" class="btn btn-primary"/><h:commandButton action="#{controllerVentas.eliminar(ventas)}" class="btn btn-warning" rendered="#{session.getAttribute('tipo_usuario')==('Administrador')}" value="eliminar" onclick="return confirm('Desea eliminar este tipo de producto')"/></h:form></td>
+                    </tr>
+                </c:forEach>
+            </tbody>
+        </table>
+    </h:body>
+</html>
+

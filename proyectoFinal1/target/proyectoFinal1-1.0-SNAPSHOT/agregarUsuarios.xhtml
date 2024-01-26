@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+                <style type="text/css">
+            *{
+                padding: 0px;
+                margin: 0px;
+            }
+            #header {
+                margin: auto;
+                width: 1000px;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            ul, ol{
+                list-style: none;
+            }
+            .nav li a{
+                background-color: #212529;
+                color: white;
+                text-decoration: none;
+                padding: 10px 37px;
+                display: block;
+            }
+            .nav li a:hover{
+                background-color: #434343;
+            }
+            .nav > li{
+                float: left;
+            }
+            .nav li ul{
+                display: none;
+                position: absolute;
+                min-width: 140px;
+            }
+            .nav li:hover > ul{
+                display: block;
+            }
+            .nav li ul li{
+                position: relative;
+            }
+            .nav li ul li ul{
+                right: -138px;
+                top: 0px;
+            }
+        </style>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/> 
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"></link>
+        <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css"></link>
+        <title>Agregar Usuario</title>    
+    </h:head>
+    <h:body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <div id="header">
+                    <ul class="nav">
+                        <li><a href="principal.xhtml">FacElec</a></li>
+                        <li><a href="principal.xhtml">Inicio</a></li>
+                        <li><a href="">Clientes</a>
+                            <ul>
+                                <li><a href="">Personas</a>
+                                    <ul>
+                                        <li><a href="agregarPersonas.xhtml">Registrar</a></li>
+                                        <li><a href="inicio.xhtml">Consultar </a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Clientes</a>
+                                    <ul>
+                                        <li><a href="agregarClientes.xhtml">Registrar</a></li>
+                                        <li><a href="clientes.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Cuenta</a>
+                                    <ul>
+                                        <li><a href="agregarUsuarios.xhtml">Registrar</a></li>
+                                        <li><a href="usuarios.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="">Trabajadores</a>
+                            <ul>
+                                <li><a href="">Personas</a>
+                                    <ul>
+                                        <li><a href="agregarPersonas.xhtml">Registrar</a></li>
+                                        <li><a href="inicio.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Trabajador</a>
+                                    <ul>
+                                        <li><a href="agregarTrabajador.xhtml">Registrar</a></li>
+                                        <li><a href="trabajador.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Cuenta</a>
+                                    <ul>
+                                        <li><a href="agregarUsuarios.xhtml">Registrar</a></li>
+                                        <li><a href="usuarios.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>   
+                        <li><a href="">Inventario</a>
+                            <ul>
+                                <li><a href="">Tipo de Producto</a>
+                                    <ul>
+                                        <li><a href="agregarTipoProducto.xhtml">Registrar</a></li>
+                                        <li><a href="tipoProducto.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Registrar Producto</a>
+                                    <ul>
+                                        <li><a href="agregarProducto.xhtml">Registrar</a></li>
+                                        <li><a href="producto.xhtml">Consultar</a></li>
+
+                                    </ul>
+                                </li>
+                                <li><a href="">Reporte de producto</a>
+                                    <ul>
+                                        <li><a href="agregarReporteProducto.xhtml">Registrar</a></li>
+                                        <li><a href="reporteProducto.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>   
+                        <li><a href="">Compras</a>
+                            <ul>
+                                <li><a href="">Proveedores</a>                        
+                                    <ul>
+                                        <li><a href="agregarProvedores.xhtml">Registrar</a></li>
+                                        <li><a href="provedores.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Compras</a>             
+                                    <ul>
+                                        <li><a href="agregarCompras.xhtml">Registrar</a></li>
+                                        <li><a href="compras.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="">Ventas</a>
+                            <ul>
+                                <li><a href="">Codigo de Ventas</a>                        
+                                    <ul>
+                                        <li><a href="agregarCodVen.xhtml">Registrar</a></li>
+                                        <li><a href="codven.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Venta</a> 
+                                    <ul>
+                                        <li><a href="agregarVentas.xhtml">Registrar</a></li>
+                                        <li><a href="ventas.xhtml">Consultar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <f:view>
+            <h2><h:outputLabel value="#{session.getAttribute('usuario')}"/></h2>
+            <h:form>
+                <h1><h:outputText value="Registrar Usuarios"/></h1>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="Codigo Usuario:" for="usuId" />
+                    <h:inputText id="usuId" value="#{controllerUsuarios.usu.usuId}" title="UsuId" required="true" requiredMessage="The UsuId field is required."/>
+                    <h:outputLabel value="Numero de documento:" for="usuario" />
+                    <h:selectOneMenu id="usuario" value="#{controllerUsuarios.per.perId}" title="Usuario" required="true" requiredMessage="The Usuario field is required.">
+                        <!-- TODO: update below reference to list of available items-->
+                        <f:selectItems value="#{controllerUsuarios.listapersonas}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="Contraseña:" for="password" />
+                    <h:inputText id="password" value="#{controllerUsuarios.usu.contrasena}" title="Password" />
+                    <h:outputLabel value="Nombre:" for="nombre" />
+                    <h:inputText id="nombre" value="#{controllerUsuarios.usu.nombre}" title="Nombre" required="true" requiredMessage="The Nombre field is required."/>
+                    <h:outputLabel value="TipoUsuario:" for="tipoUsuario" />
+                    <h:selectOneMenu id="tipoUsuario" value="#{controllerUsuarios.tipUsu.tipId}" title="TipoUsuario" required="true" requiredMessage="The TipoUsuario field is required.">
+                        <!-- TODO: update below reference to list of available items-->
+                        <f:selectItems value="#{controllerUsuarios.listatipousuarios}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandButton action="#{controllerUsuarios.crearClientes()}" class="btn btn-primary" value="ingresar" />
+                <h:button outcome="usuarios.xhtml" class="btn btn-warning" value="Volver"/>
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+
+
